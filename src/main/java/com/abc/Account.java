@@ -15,6 +15,7 @@ public class Account {
     public Account(int accountType) {
         this.accountType = accountType;
         this.transactions = new ArrayList<Transaction>();
+        System.out.println("Test");
     }
 
     public void deposit(double amount) {
