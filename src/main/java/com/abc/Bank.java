@@ -3,6 +3,8 @@ package com.abc;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.abc.Account.AccountType;
+
 public class Bank {
     private List<Customer> customers;
 
@@ -35,12 +37,12 @@ public class Bank {
     }
 
     public String getFirstCustomer() {
-        try {
-            customers = null;
-            return customers.get(0).getName();
-        } catch (Exception e){
-            e.printStackTrace();
-            return "Error";
-        }
+    	//The initial code will throw RuntimeException.
+    	if(!customers.isEmpty()) {
+    		return customers.get(0).getName();
+    	} else {
+    		return null;
+    	}
+    	
     }
 }
